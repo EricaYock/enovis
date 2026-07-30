@@ -14,6 +14,14 @@ header .nav-wrapper.nav-transparent {
   border-bottom-color: transparent;
 }
 
+/* white nav text + icons while transparent over the dark hero */
+@media (width >= 900px) {
+  header .nav-wrapper.nav-transparent nav .nav-sections .nav-list > li,
+  header .nav-wrapper.nav-transparent nav .nav-tools {
+    color: #fff;
+  }
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
@@ -51,6 +59,7 @@ header nav[aria-expanded='true'] {
   header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
+    background-color: transparent;
   }
 }
 
@@ -212,9 +221,9 @@ header nav .nav-sections .nav-list {
   header nav .nav-sections .nav-list > li {
     flex: 0 1 auto;
     position: relative;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.65px;
     text-transform: uppercase;
     padding: 20px 0;
   }
@@ -392,10 +401,39 @@ header nav .nav-tools ul li {
 
 header nav .nav-tools ul li a {
   color: inherit;
+  display: flex;
+  align-items: center;
 }
 
 header nav .nav-tools ul li a:hover {
   color: var(--brand-primary, #e4002b);
+}
+
+/* desktop: show SVG icon, hide the text label */
+@media (width >= 900px) {
+  header nav .nav-tools .nav-tool-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+  }
+
+  header nav .nav-tools .nav-tool-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentcolor;
+  }
+
+  header nav .nav-tools .nav-tool-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
 }
 
 @media (width < 900px) {
@@ -422,6 +460,11 @@ header nav .nav-tools ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     font-weight: 600;
+  }
+
+  /* on mobile show the text label, hide the icon */
+  header nav .nav-tools .nav-tool-icon {
+    display: none;
   }
 }
 

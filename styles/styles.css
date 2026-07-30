@@ -45,7 +45,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav heights */
-  --nav-height: 64px;
+  --nav-height: 60px;
   --breadcrumbs-height: 34px;
   --header-height: var(--nav-height);
 }
@@ -96,6 +96,12 @@ body.appear {
 
 header {
   height: var(--header-height);
+}
+
+/* On hero pages the fixed header floats over the banner (transparent), so the
+   header element must not reserve layout space above the hero. */
+body.has-hero-header header {
+  height: 0;
 }
 
 header .header,

@@ -251,10 +251,35 @@ export default async function decorate(block) {
   if (navTools) {
     const toolsList = navTools.querySelector('ul');
     if (toolsList) toolsList.classList.add('nav-tools-list');
-    const search = navTools.querySelector('a[href*="search"]');
-    if (search && search.textContent === '') {
-      search.setAttribute('aria-label', 'Search');
-    }
+
+    // Replace the utility text labels with the source's SVG icons on desktop.
+    // Each icon is matched by the link's href/label; the visible text is kept
+    // as an aria-label / mobile label so the menu stays accessible and readable
+    // when the labels show inside the mobile drawer.
+    const TOOL_ICONS = {
+      search: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19.55 20.575-6.3-6.275q-.75.625-1.725.975-.975.35-2 .35-2.575 0-4.35-1.775Q3.4 12.075 3.4 9.5q0-2.55 1.775-4.338 1.775-1.787 4.35-1.787 2.55 0 4.325 1.775 1.775 1.775 1.775 4.35 0 1.075-.35 2.05-.35.975-.95 1.7l6.275 6.275ZM9.525 14.125q1.925 0 3.263-1.35 1.337-1.35 1.337-3.275 0-1.925-1.337-3.275-1.338-1.35-3.263-1.35-1.95 0-3.287 1.35Q4.9 7.575 4.9 9.5q0 1.925 1.338 3.275 1.337 1.35 3.287 1.35Z"/></svg>',
+      order: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.85 19.55q-1.175 0-1.988-.812-.812-.813-.812-1.988h-1.7V6.3q0-.75.525-1.275Q2.4 4.5 3.15 4.5h13.625v3.8h2.65l3.225 4.325v4.125h-1.8q0 1.175-.825 1.988-.825.812-2 .812-1.15 0-1.975-.812-.825-.813-.825-1.988H8.65q0 1.175-.812 1.988-.813.812-1.988.812Zm0-1.5q.55 0 .925-.375t.375-.925q0-.55-.375-.925t-.925-.375q-.55 0-.925.375t-.375.925q0 .55.375.925t.925.375Zm-3-2.8h.725q.325-.55.925-.925.6-.375 1.35-.375.725 0 1.338.362.612.363.937.938h7.15V6H3.15q-.1 0-.2.1t-.1.2Zm15.2 2.8q.55 0 .925-.375t.375-.925q0-.55-.375-.925t-.925-.375q-.55 0-.937.375-.388.375-.388.925t.388.925q.387.375.937.375Zm-1.275-4.8h4.475l-2.6-3.45h-1.875Z"/></svg>',
+      location: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.75q.725 0 1.238-.512.512-.513.512-1.238t-.512-1.238Q12.725 8.25 12 8.25t-1.238.512q-.512.513-.512 1.238t.512 1.238q.513.512 1.238.512Zm0 8.05q3.1-2.75 4.675-5.263 1.575-2.512 1.575-4.337 0-2.85-1.812-4.65-1.813-1.8-4.438-1.8t-4.438 1.8Q5.75 7.35 5.75 10.2q0 1.825 1.575 4.337Q8.9 17.05 12 19.8Zm0 2q-3.9-3.4-5.825-6.3-1.925-2.9-1.925-5.3 0-3.625 2.338-5.788Q8.925 2.25 12 2.25q3.075 0 5.413 2.162Q19.75 6.575 19.75 10.2q0 2.4-1.925 5.3T12 21.8Z"/></svg>',
+      flag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v11h16V6Zm15 10H5v-1h14Zm0-2H5v-1.12h14Zm0-2h-7v-1h7Zm0-2h-7v-1h7Zm0-2h-7v-1h7Z"/></svg>',
+    };
+    const iconFor = (a) => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      const label = a.textContent.toLowerCase();
+      if (href.includes('search') || label.includes('search')) return 'search';
+      if (href.includes('order') || label.includes('order')) return 'order';
+      if (label.includes('surgeon') || label.includes('sales rep') || href.includes('locator')) return 'location';
+      if (label.includes('international') || href.includes('international')) return 'flag';
+      return null;
+    };
+    navTools.querySelectorAll('a').forEach((a) => {
+      const key = iconFor(a);
+      if (!key) return;
+      const label = a.textContent.trim();
+      a.setAttribute('aria-label', label);
+      a.setAttribute('title', label);
+      // keep the label text as a mobile-only span; icon shows on desktop
+      a.innerHTML = `<span class="nav-tool-icon">${TOOL_ICONS[key]}</span><span class="nav-tool-label">${label}</span>`;
+    });
   }
 
   // hamburger for mobile
@@ -281,6 +306,9 @@ export default async function decorate(block) {
   // where the first section is a full-bleed dark hero.
   const hasHero = !!document.querySelector('main .carousel-banner, main .carousel');
   if (hasHero) {
+    // Let the hero sit under the floating/transparent header (no reserved
+    // spacer) — matches the source where the nav overlaps the banner.
+    document.body.classList.add('has-hero-header');
     const applyTransparency = () => {
       if (window.scrollY < 80 && isDesktop.matches) {
         navWrapper.classList.add('nav-transparent');
