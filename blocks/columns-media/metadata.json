@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-07-30T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://enovis.com/",
+    "originPage": "Enovis corporate homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + text (heading + paragraph + CTA) side by side",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "two-column image + text feature sections",
+      "alternating media/text content rows on light backgrounds",
+      "CSR / patient-care / careers style promotional rows"
+    ],
+    "notSuitableFor": [
+      "dark promo banners",
+      "grids of repeatable cards",
+      "tabular data"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 3,
+    "lastUsed": "2026-07-30T00:00:00.000Z"
+  }
+}

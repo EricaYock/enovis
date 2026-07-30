@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://enovis.com/"
+      ],
+      "representativeUrl": "https://enovis.com/",
+      "coverageGaps": [],
+      "description": "Enovis corporate homepage: hero carousel, featured video cards, corporate content sections (CSR, patient care, careers), press & events, and closing promo banner.",
+      "blocks": [
+        {
+          "name": "carousel-banner",
+          "instances": [
+            "#slides-homepage",
+            ".top-slider .slides"
+          ]
+        },
+        {
+          "name": "cards-video",
+          "instances": [
+            ".featured-videos-homepage"
+          ]
+        },
+        {
+          "name": "columns-media",
+          "instances": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(2)",
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(3)",
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(4)",
+            ".press-events"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            "section.background-color-primary-dark-primary"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "rc4",
+          "name": "Hero carousel",
+          "selector": [
+            "#page > div.top-slider",
+            ".top-slider"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc5",
+          "name": "Featured videos grid",
+          "selector": [
+            "#content-top"
+          ],
+          "style": "dark",
+          "blocks": [
+            "cards-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "intro",
+          "name": "Company intro statement",
+          "selector": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(1)"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(1) p"
+          ]
+        },
+        {
+          "id": "rc8",
+          "name": "One Company. One Team. One Shared Purpose. (CSR)",
+          "selector": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc9",
+          "name": "Transforming patient care",
+          "selector": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(3)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc10",
+          "name": "Working at Enovis",
+          "selector": [
+            "#node-1 .field__item > section.padding-top-2:nth-of-type(4)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "rc11",
+          "name": "Press & Events + Creating Better Together banner",
+          "selector": [
+            "#content-bottom"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-media",
+            "columns-promo"
+          ],
+          "defaultContent": [
+            ".press-events h2.block-title",
+            ".press-events footer.view-footer a.button"
+          ]
+        }
+      ]
+    }
+  ]
+}

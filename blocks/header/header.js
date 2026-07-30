@@ -74,7 +74,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+  // Keep top-level submenus collapsed when the mobile menu opens — they expand
+  // one at a time as an accordion when the user taps a row (matches source UX).
+  toggleAllNavSections(navSections, 'false');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
@@ -174,9 +176,11 @@ async function buildBreadcrumbs() {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment. Default path resolves relative to the site content
+  // root: the Enovis content tree is mounted under /content, so the nav fragment
+  // lives at /content/nav. In production, a `nav` metadata value overrides this.
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -200,24 +204,53 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+    // Tag the top-level nav <ul> so CSS can target it regardless of whether the
+    // EDS scaffold wraps it in a .default-content-wrapper.
+    const topList = navSections.querySelector(':scope .default-content-wrapper > ul, :scope > ul');
+    if (topList) topList.classList.add('nav-list');
+
+    // Top-level items that own a submenu become hoverable/clickable dropdowns.
+    const topSelector = ':scope .default-content-wrapper > ul > li, :scope > ul > li';
+    navSections.querySelectorAll(topSelector).forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      // Desktop: open on hover (matches source), close when the pointer leaves.
+      navSection.addEventListener('mouseenter', () => {
+        if (isDesktop.matches && navSection.querySelector('ul')) {
+          navSection.setAttribute('aria-expanded', 'true');
         }
+      });
+      navSection.addEventListener('mouseleave', () => {
+        if (isDesktop.matches) navSection.setAttribute('aria-expanded', 'false');
+      });
+      // Click toggles (desktop tap / mobile accordion).
+      navSection.addEventListener('click', (e) => {
+        if (!navSection.querySelector('ul')) return;
+        // Let links inside an open panel (child li) navigate normally.
+        const insideChild = e.target.closest('li') !== navSection;
+        if (insideChild) return;
+        // On mobile, the top-level row toggles its accordion instead of
+        // navigating — the source parent items are section headers, not pages.
+        if (!isDesktop.matches && e.target.closest('a')) {
+          e.preventDefault();
+        }
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        if (isDesktop.matches) {
+          toggleAllNavSections(navSections);
+        }
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       });
     });
     navSections.querySelectorAll('.button-container').forEach((buttonContainer) => {
       buttonContainer.classList.remove('button-container');
-      buttonContainer.querySelector('.button').classList.remove('button');
+      const btn = buttonContainer.querySelector('.button');
+      if (btn) btn.classList.remove('button');
     });
   }
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
+    const toolsList = navTools.querySelector('ul');
+    if (toolsList) toolsList.classList.add('nav-tools-list');
     const search = navTools.querySelector('a[href*="search"]');
     if (search && search.textContent === '') {
       search.setAttribute('aria-label', 'Search');
@@ -241,6 +274,24 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // Transparent-over-hero behavior: the source header is transparent while the
+  // page is scrolled to the top (dark hero shows through, white logo), and turns
+  // solid white once the user scrolls past the hero. Only enable on the homepage
+  // where the first section is a full-bleed dark hero.
+  const hasHero = !!document.querySelector('main .carousel-banner, main .carousel');
+  if (hasHero) {
+    const applyTransparency = () => {
+      if (window.scrollY < 80 && isDesktop.matches) {
+        navWrapper.classList.add('nav-transparent');
+      } else {
+        navWrapper.classList.remove('nav-transparent');
+      }
+    };
+    applyTransparency();
+    window.addEventListener('scroll', applyTransparency, { passive: true });
+    isDesktop.addEventListener('change', applyTransparency);
+  }
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());

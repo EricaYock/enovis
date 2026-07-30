@@ -1,0 +1,78 @@
+/* Feature rows: image + text, vertically centered, generous whitespace */
+.columns-media {
+  margin: 0 auto;
+}
+
+.columns-media > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.columns-media > div > div {
+  order: 1;
+}
+
+.columns-media > div > .columns-media-img-col {
+  order: 0;
+}
+
+.columns-media h2 {
+  margin: 0 0 20px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--heading-grey);
+}
+
+.columns-media p {
+  margin: 0 0 16px;
+  color: var(--body-grey);
+  font-size: var(--body-font-size-s);
+  line-height: 1.55;
+}
+
+/* Large centered lead paragraph that sits above the first feature row
+   (the company intro statement, default content in the same section). */
+.columns-media-container .default-content-wrapper > p:first-child {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  text-align: center;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--body-grey);
+}
+
+.columns-media a:not(.button) {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.columns-media a:not(.button):hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .columns-media > div {
+    align-items: center;
+    flex-direction: row;
+    gap: 56px;
+  }
+
+  .columns-media > div > div {
+    flex: 1 1 0;
+    order: unset;
+  }
+
+  /* image column takes a touch more width, like the source feature rows */
+  .columns-media > div > .columns-media-img-col {
+    flex: 1.15 1 0;
+  }
+}

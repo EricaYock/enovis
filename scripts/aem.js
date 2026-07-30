@@ -302,6 +302,12 @@ function createOptimizedPicture(
   eager = false,
   breakpoints = [{ media: '(min-width: 600px)', width: '2000' }, { width: '750' }],
 ) {
+  // --- BEGIN DM dispatch (excat-generated) ---
+  if (typeof window.__dmRender__ === 'function') {
+    const dmPicture = window.__dmRender__(src, alt);
+    if (dmPicture) return dmPicture;
+  }
+  // --- END DM dispatch (excat-generated) ---
   const url = new URL(src, window.location.href);
   const picture = document.createElement('picture');
   const { pathname } = url;

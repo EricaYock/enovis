@@ -1,0 +1,54 @@
+/* Dark-red promo banner: tagline (left) + paragraph (right) */
+.columns-promo {
+  background-color: var(--brand-primary);
+  color: #fff;
+  padding: 48px 32px;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.columns-promo > div > div {
+  flex: 1;
+}
+
+.columns-promo p {
+  margin: 0;
+  color: #fff;
+}
+
+/* tagline (first column) */
+.columns-promo > div > div:first-child p {
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 300;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.columns-promo > div > div:last-child p {
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+}
+
+@media (width >= 900px) {
+  .columns-promo {
+    padding: 64px 48px;
+  }
+
+  .columns-promo > div {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .columns-promo > div > div:first-child p {
+    text-align: left;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "enovis": {
+      "previewOrg": "EricaYock",
+      "previewSite": "enovis",
+      "aemSitePath": "/content/enovis",
+      "aemAssetsFolderPath": "/content/dam/enovis",
+      "aemSiteName": "enovis",
+      "aemSiteTitle": "enovis",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

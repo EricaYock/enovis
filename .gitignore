@@ -9,3 +9,4 @@ helix-importer-ui
 .idea
 localhost.pem
 localhost-key.pem
+migration-work/navigation-validation/

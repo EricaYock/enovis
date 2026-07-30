@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-video",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-07-30T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://enovis.com/",
+    "originPage": "Enovis corporate homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "poster image + play overlay + title",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "featured video thumbnail grids",
+      "education/product video galleries on dark backgrounds",
+      "image + title card grids"
+    ],
+    "notSuitableFor": [
+      "text-heavy cards without images",
+      "single feature highlights"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-07-30T00:00:00.000Z"
+  }
+}

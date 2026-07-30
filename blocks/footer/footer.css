@@ -1,20 +1,123 @@
 footer {
-  background-color: var(--light-color);
+  background-color: #2a2a2d;
+  color: #cfcfcf;
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer a:any-link {
+  color: #cfcfcf;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer .footer {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1240px;
+  padding: 48px 24px 32px;
+}
+
+/* footer.js wraps the fragment in a single <div>; the four content sections are
+   its .section children. Target those rows directly. */
+footer .footer > div > .section {
+  padding: 0;
 }
 
 footer .footer p {
+  margin: 0 0 4px;
+}
+
+/* --- Row 1: link columns --- */
+footer .footer > div > .section:nth-child(1) {
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+/* the three link groups (Help / Company Info / Legal) live inside the
+   section's default-content-wrapper — make that the grid container */
+footer .footer > div > .section:nth-child(1) .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+footer .footer h2 {
+  color: #f8f8f8;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 16px;
+}
+
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer ul li {
+  margin-bottom: 10px;
+}
+
+/* --- Row 2: social + address --- */
+footer .footer > div > .section:nth-child(2) {
+  padding: 32px 0;
+}
+
+footer .footer ul.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+footer .footer ul.footer-social li {
   margin: 0;
 }
 
+footer .footer ul.footer-social a {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* --- Row 3: logo --- */
+footer .footer > div > .section:nth-child(3) img {
+  width: 140px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* --- Row 4: disclaimers --- */
+footer .footer > div > .section:nth-child(4) {
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  color: #9a9a9d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+footer .footer > div > .section:nth-child(4) p {
+  margin-bottom: 12px;
+}
+
+footer .footer > div > .section:nth-child(4) strong {
+  color: #cfcfcf;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer {
+    padding: 56px 32px 32px;
+  }
+
+  footer .footer > div > .section:nth-child(1) .default-content-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    max-width: 720px;
   }
 }
