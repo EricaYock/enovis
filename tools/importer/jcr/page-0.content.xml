@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="Medical Devices &amp; Services | DonJoy | Aircast | Exos | Procare | Compex | Chattanooga | Enovis Surgical | Dr. Comfort | CMF | Enovis" jcr:description="At Enovis, we develop clinically differentiated medical technology solutions that generate measurably better patient outcomes and transform workflows. Our brands include Aircast, Chattanooga, CMF, Compex, Enovis Surgical, DonJoy, Dr. Comfort, Exos and Procare." modelFields="[jcr:title,jcr:description,keywords]">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="carousel-banner" name="Carousel Banner">
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Carousel Banner Slide" model="carousel-banner-item" modelFields="[media_image,media_imageAlt,content_text]" media_image="https://enovis.widen.net/content/8ozk9f50xf/png/banner-lightforce.png?crop=false&amp;position=c&amp;color=ffffffff&amp;u=rewuhh&amp;w=2048&amp;h=920" content_text="&lt;p&gt;LightForce® High-Intensity Laser Therapy&lt;/p&gt;&lt;p&gt;&lt;h2&gt;The Power to Move Forward&lt;/h2&gt;&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.chattanoogarehab.com/us/laser-therapy&quot;&gt;Learn More&lt;/a&gt;&lt;/p&gt;"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Carousel Banner Slide" model="carousel-banner-item" modelFields="[media_image,media_imageAlt,content_text]" media_image="https://enovis.widen.net/content/nhg7bjtk3p/png/banner-nopai-act-iceman.png?crop=false&amp;position=c&amp;color=ffffffff&amp;u=rewuhh&amp;w=2048&amp;h=922" content_text="&lt;p&gt;Medicare Part B reimbursable&lt;/p&gt;&lt;p&gt;under the NOPAIN Act&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Clinically proven non-opioid pain relief&lt;/h2&gt;&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;/nopain-act&quot;&gt;Learn More&lt;/a&gt;&lt;/p&gt;"></item_1>
+          <item_2 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Carousel Banner Slide" model="carousel-banner-item" modelFields="[media_image,media_imageAlt,content_text]" media_image="https://enovis.widen.net/content/gijyejdzl7/jpeg/banner-aresenal-superfoot.jpg?crop=false&amp;position=c&amp;q=80&amp;color=ffffffff&amp;u=rewuhh&amp;w=2048&amp;h=920&amp;v=005" content_text="&lt;p&gt;Enovis® Foot &amp;#x26; Ankle&lt;/p&gt;&lt;p&gt;&lt;h2&gt;Arsenal Foot™ Plating System&lt;/h2&gt;&lt;/p&gt;&lt;p&gt;The Arsenal Foot™ Plating System delivers the confidence of broader procedural coverage within one trusted system.&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;/products/arsenal-foot-plating-system&quot;&gt;Learn More&lt;/a&gt;&lt;/p&gt;"></item_2>
+        </block>
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h3&gt;Chattanooga®&lt;/h3&gt;&lt;p&gt;LightForce® Lasers&lt;/p&gt;&lt;h3&gt;DonJoy®&lt;/h3&gt;&lt;p&gt;IceMan® Cold Therapy&lt;/p&gt;&lt;h3&gt;Enovis® Foot &amp;#x26; Ankle&lt;/h3&gt;&lt;p&gt;Arsenal Foot™ Plating System&lt;/p&gt;"/>
+      </section>
+      <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" style="[dark]" model="section" modelFields="[name,style]">
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="cards-video" name="Cards Video">
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card" model="card" modelFields="[image,text]" image="https://enovis.com/sites/default/files/styles/homepage_video_thumbnail/public/images/vid-thumb-x-act-fit.png?itok=9uvUoU8X" text="&lt;p&gt;&lt;h4&gt;X-Act Fit Shoulder - Overview&lt;/h4&gt;&lt;/p&gt;"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card" model="card" modelFields="[image,text]" image="https://enovis.com/sites/default/files/styles/homepage_video_thumbnail/public/video-thumbs/vid-thumb-roamoa.jpg?itok=I_BCEEla" text="&lt;p&gt;&lt;h4&gt;DonJoy ROAM OA Knee Brace&lt;/h4&gt;&lt;/p&gt;"></item_1>
+          <item_2 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card" model="card" modelFields="[image,text]" image="https://enovis.com/sites/default/files/styles/homepage_video_thumbnail/public/images/vid-thumb-altivate-reverse-glenoid-02.png?itok=mckogUzC" text="&lt;p&gt;&lt;h4&gt;AltiVate Reverse® Glenoid&lt;/h4&gt;&lt;/p&gt;"></item_2>
+        </block>
+        <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Enovis: Creating Better Together" titleType="h1"/>
+      </section_1>
+      <section_2 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Enovis™ is a medical technology company focused on developing clinically differentiated therapeutic solutions that generate measurably better patient outcomes and transform workflows.&lt;/p&gt;"/>
+        <columns sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="https://enovis.widen.net/content/xl4m55gsxw/jpeg/csr-2025.jpg?crop=false&amp;position=c&amp;q=100&amp;color=ffffffff&amp;u=rewuhh&amp;w=614&amp;h=346&amp;v=03" linkText="2025 CSR Report - Image Marathon Runners"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h2&gt;One Company.One Team.One Shared Purpose.&lt;/h2&gt;&lt;p&gt;As we continue to grow, innovate and expand our global
+                    footprint and impact, one thing stays the same: our
+                    commitment to Creating Better Together.&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.enoviscsr.com/2025/&quot;&gt;Read&lt;/a&gt; our 2025
+                    Corporate Social Responsibility Report to learn more.&lt;/p&gt;"/>
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="https://www.enoviscsr.com/2025/" linkText="Read the 2025 Report"/>
+            </col2>
+          </row1>
+        </columns>
+        <columns_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Transforming patient care" titleType="h2"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Powered by continuous improvement, extraordinary talent,
+                    and innovation, we are creating better together by
+                    partnering with healthcare professionals. Our extensive
+                    range of products, services, and integrated technologies
+                    fuels active lifestyles.&lt;/p&gt;"/>
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/corporate-info/about-us" linkText="Learn More"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="https://enovis.widen.net/content/vwimbvvpdn/jpeg/GettyImages-918879746.jpeg?position=c&amp;color=ffffffff&amp;quality=80&amp;u=rewuhh" linkText="Physical therapist assisting patient"/>
+            </col2>
+          </row1>
+        </columns_1>
+        <columns_2 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="https://enovis.widen.net/content/wkuhhyklqd/jpeg/careers-web-1400x635.jpeg?position=c&amp;color=ffffffff&amp;quality=80&amp;u=rewuhh" linkText="People gathered at Envois work event"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Working at Enovis" titleType="h2"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;With our culture of continuous improvement and
+                    innovation, and our commitment to bettering lives and
+                    fueling active lifestyles, working at Enovis is a career
+                    experience like no other. We have more than 8,000
+                    passionate employees in locations across six continents,
+                    and we empower our team members to create better together
+                    every day on a worldwide scale.&lt;/p&gt;"/>
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/careers" linkText="Learn More"/>
+            </col2>
+          </row1>
+        </columns_2>
+      </section_2>
+      <section_3 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Press &amp; Events" titleType="h2"/>
+        <columns sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="4" columns="8">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/investors/press-releases/nsn-cycling-team-announces-strategic-partnership-compex-elevate" linkText="NSN Cycling Team announces strategic partnership with Compex to elevate performance and recovery"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;July 23, 2026&lt;/p&gt;&lt;p&gt;NSN Cycling Team is proud to announce a new partnership with Compex, a world leader in portable EMS muscle stimulators and recovery technology. Compex, part of the global medical technology
+                    company Enovis, has been helping athletes optimize performance and recovery for more than 40 years.&lt;/p&gt;"/>
+              <button_1 sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/investors/press-releases/enovis-companion-animal-health-launches-ct-revitl" linkText="Enovis™ Companion Animal Health Launches CT-RevitL™, the Next-Generation Laser Therapy System for Veterinary Care"/>
+              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;July 13, 2026&lt;/p&gt;&lt;p&gt;DALLAS, TX, July 13, 2026 - Enovis™ Corporation (NYSE: ENOV), an innovation-driven medical technology company, today announced the U.S. launch of CT-RevitL™, the next-generation veterinary PBM
+                    laser therapy system from its Companion Animal Health business. CT-RevitL delivers enhanced clinical performance, greater mobility and a more intuitive treatment experience for veterinary teams
+                    and their patients.&lt;/p&gt;"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"/>
+            </col2>
+            <col3 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;"/>
+            </col3>
+            <col4 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;"/>
+            </col4>
+            <col5 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;"/>
+            </col5>
+            <col6 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;"/>
+            </col6>
+            <col7 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;"/>
+            </col7>
+            <col8 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;"/>
+            </col8>
+          </row1>
+          <row2 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;"/>
+            </col2>
+          </row2>
+          <row3 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;"/>
+            </col2>
+          </row3>
+          <row4 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;"/>
+            </col2>
+          </row4>
+        </columns>
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/news-events" linkText="View All Press Releases"/>
+        <columns_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Creating Better Together™&lt;/p&gt;"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Powered by a culture of continuous improvement,
+                    extraordinary talent and innovation—we “create better
+                    together” by partnering with healthcare professionals.
+                    Together, we help patients thrive through an extensive
+                    range of products, services and integrated technologies
+                    that fuel an active lifestyle.&lt;/p&gt;"/>
+            </col2>
+          </row1>
+        </columns_1>
+      </section_3>
+      <section_4 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]"></section_4>
+    </root>
+  </jcr:content>
+</jcr:root>
