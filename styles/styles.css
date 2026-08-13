@@ -28,8 +28,11 @@
   --heading-grey: #5f5f5f;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Mulish (self-hosted) stands in for the source's proprietary "Uni Neue".
+     The source uses one rounded-geometric family for body and headings alike,
+     so both roles resolve to Mulish. */
+  --body-font-family: mulish, mulish-fallback, sans-serif;
+  --heading-font-family: mulish, mulish-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -50,16 +53,11 @@
   --header-height: var(--nav-height);
 }
 
-/* fallback fonts */
+/* fallback font — Arial metrics-adjusted to approximate Mulish, minimizing
+   layout shift while the web font loads. */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
+  font-family: mulish-fallback;
+  size-adjust: 97%;
   src: local('Arial');
 }
 
