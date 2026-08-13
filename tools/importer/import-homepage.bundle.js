@@ -151,9 +151,48 @@ var CustomImportScript = (() => {
     const cells = [];
     if (isPress) {
       const pressItems = Array.from(element.querySelectorAll(".press-homepage .margin-bottom-2, .view-content > .margin-bottom-2")).filter((el) => !el.closest(".attachment-after, .attachment"));
-      const leftContent = fixImgs(pressItems.length ? pressItems : Array.from(element.querySelectorAll(".press-homepage > .view-content > *")));
+      const sourceItems = pressItems.length ? pressItems : Array.from(element.querySelectorAll(".press-homepage > .view-content > *"));
+      const leftContent = [];
+      sourceItems.forEach((item) => {
+        const titleLink = item.querySelector("h1 a, h2 a, h3 a, h4 a, a");
+        if (titleLink && (titleLink.textContent || "").trim()) {
+          const h = document.createElement("h3");
+          h.textContent = (titleLink.textContent || "").trim();
+          leftContent.push(h);
+        }
+        const time = item.querySelector("time");
+        if (time && time.textContent.trim()) {
+          const p = document.createElement("p");
+          p.textContent = time.textContent.replace(/\s+/g, " ").trim();
+          leftContent.push(p);
+        }
+        const body = item.querySelector(".views-field-body .field-content, .field-content");
+        if (body && body.textContent.trim()) {
+          const p = document.createElement("p");
+          p.textContent = body.textContent.replace(/\s+/g, " ").trim();
+          leftContent.push(p);
+        }
+      });
+      const rightContent = [];
       const eventsTable = element.querySelector(".events-homepage table, .attachment-after table, .attachment table, table");
-      const rightContent = fixImgs([eventsTable].filter(Boolean));
+      if (eventsTable) {
+        Array.from(eventsTable.querySelectorAll("tr")).forEach((tr) => {
+          const tds = Array.from(tr.querySelectorAll("td"));
+          if (!tds.length) return;
+          const dateText = (tds[0] ? tds[0].textContent : "").replace(/\s+/g, " ").trim();
+          const nameText = (tds[1] ? tds[1].textContent : "").replace(/\s+/g, " ").trim();
+          if (!dateText && !nameText) return;
+          const p = document.createElement("p");
+          if (dateText) {
+            const strong = document.createElement("strong");
+            strong.textContent = dateText;
+            p.append(strong);
+          }
+          if (dateText && nameText) p.append(document.createElement("br"));
+          if (nameText) p.append(document.createTextNode(nameText));
+          rightContent.push(p);
+        });
+      }
       if (!leftContent.length && !rightContent.length) {
         element.replaceWith(...element.childNodes);
         return;

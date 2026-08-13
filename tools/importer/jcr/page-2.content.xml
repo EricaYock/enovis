@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Help" titleType="h2"/>
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/contact-us&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/order-tracking&quot;&gt;Order Tracking&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/contact-us/sales-rep-locator&quot;&gt;Sales Rep Locator&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;"/>
+        <title_1 sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Company Info" titleType="h2"/>
+        <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/corporate-info/about-us&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/contact-us&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;"/>
+        <title_2 sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Legal" titleType="h2"/>
+        <text_2 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/legal&quot;&gt;Legal Notice&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/privacy-policy&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/privacy-policy&quot;&gt;Cookie Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/ca-prop-65&quot;&gt;CA Prop 65&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;"/>
+      </section>
+      <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;http://www.youtube.com/djoglobal&quot; title&#x3D;&quot;YouTube&quot;&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;https://twitter.com/enovismedtech&quot; title&#x3D;&quot;Twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;http://www.facebook.com/EnovisMedTech&quot; title&#x3D;&quot;Facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;https://www.linkedin.com/company/enovis/&quot; title&#x3D;&quot;LinkedIn&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;https://www.instagram.com/EnovisMedTech&quot; title&#x3D;&quot;Instagram&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;&lt;p&gt;2711 Centerville Road, Suite 400&lt;/p&gt;&lt;p&gt;Wilmington, DE 19808&lt;/p&gt;&lt;p&gt;800.321.9549&lt;/p&gt;&lt;p&gt;© 2026 Enovis Corporation All Rights Reserved&lt;/p&gt;"/>
+      </section_1>
+      <section_2 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/" linkText=""/>
+      </section_2>
+      <section_3 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;&lt;strong&gt;Individual results may vary.&lt;/strong&gt; Neither DJO, LLC nor any of the Enovis companies dispense medical advice. The contents of this website do not constitute medical, legal, or any other type of professional advice. Rather, please consult your healthcare professional for information on the courses of treatment, if any, which may be appropriate for you.&lt;/p&gt;&lt;p&gt;Some of the products advertised on this website may not be licensed in accordance with Canadian law.&lt;/p&gt;"/>
+      </section_3>
+    </root>
+  </jcr:content>
+</jcr:root>

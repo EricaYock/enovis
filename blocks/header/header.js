@@ -175,12 +175,23 @@ async function buildBreadcrumbs() {
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
+/**
+ * Resolves the content site root from the current page path so fragments
+ * (nav/footer) resolve in every environment:
+ *   - AEM author/preview: pages live at /content/<site>/... -> root /content/<site>
+ *   - local dev / published: pages live at the domain root -> root '' (i.e. /nav)
+ * A `nav`/`footer` page-metadata value always overrides this.
+ */
+function getSiteRoot() {
+  const match = window.location.pathname.match(/^(\/content\/[^/]+)/);
+  return match ? match[1] : '';
+}
+
 export default async function decorate(block) {
-  // load nav as fragment. Default path resolves relative to the site content
-  // root: the Enovis content tree is mounted under /content, so the nav fragment
-  // lives at /content/nav. In production, a `nav` metadata value overrides this.
+  // load nav as fragment. The default path is anchored to the site root so it
+  // works both on AEM (/content/<site>/nav) and locally/published (/nav).
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : `${getSiteRoot()}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM

@@ -57,6 +57,25 @@ const damPath = parsed['--dam-path'] || '/content/dam';
 const packageName = parsed['--package-name'] || 'content-package';
 const outDir = resolve(parsed['--out'] || 'tools/importer/jcr');
 
+// --extra-page lets us fold pre-built JCR page XML (e.g. nav/footer fragments
+// that are authored/generated outside the URL scrape) into the same content
+// package, so a single upload restores everything. Format (repeatable):
+//   --extra-page /content/enovis/nav=migration-work/jcr-content/nav.xml
+// Multiple pairs may be comma-separated, or the flag may be passed repeatedly.
+const extraPageArgs = [];
+process.argv.slice(2).forEach((a, i, arr) => {
+  if (a === '--extra-page' && arr[i + 1]) extraPageArgs.push(arr[i + 1]);
+});
+const extraPages = extraPageArgs
+  .flatMap((v) => v.split(','))
+  .map((pair) => pair.trim())
+  .filter(Boolean)
+  .map((pair) => {
+    const eq = pair.indexOf('=');
+    if (eq < 0) throw new Error(`--extra-page must be "jcrPath=file": ${pair}`);
+    return { path: pair.slice(0, eq).trim(), file: resolve(pair.slice(eq + 1).trim()) };
+  });
+
 // helix-importer bundle (same one run-bulk-import.js injects)
 const HELIX = '/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/static/inject/helix-importer.js';
 
@@ -144,6 +163,18 @@ async function main() {
   }
 
   await browser.close();
+
+  // Fold in any pre-built JCR pages (nav/footer fragments). These are already
+  // valid JCR XML, so they bypass the scrape + md2jcr path — we just attach
+  // them at the requested content path so they land in the same package.
+  extraPages.forEach(({ path: extraPath, file }) => {
+    if (!existsSync(file)) {
+      throw new Error(`--extra-page file not found: ${file}`);
+    }
+    const data = readFileSync(file, 'utf-8');
+    pages.push({ path: extraPath, data, url: `(prebuilt) ${file}` });
+    console.log(`[jcr]   -> ${extraPath} (${data.length} bytes XML, prebuilt)`);
+  });
 
   // Build the FileVault content-package ZIP in Node (the browser
   // createJcrPackage needs a File System Access dir handle, unavailable

@@ -41,15 +41,73 @@ export default function parse(element, { document }) {
   const cells = [];
 
   if (isPress) {
-    // ---- Press & Events variant: press-release list (left) | events table (right) ----
-    // Left: the press-release items (exclude anything living in the events attachment).
+    // ---- Press & Events variant: press-release list (left) | events schedule (right) ----
+    // Both cells are rebuilt as clean flow content. CRITICAL: the events schedule must
+    // NOT be emitted as a nested <table>. A <table> inside a block cell makes the xwalk
+    // md2jcr converter misread the whole block as a multi-column/multi-row grid, which
+    // both duplicates the events and corrupts the press-release heading links into pill
+    // buttons. So the events are flattened into plain paragraphs instead.
+
+    // Left: rebuild each press release as heading (title link) + date + summary. Titles
+    // are emitted as headings (md2jcr -> "title" component, rendered as a heading), never
+    // as a lone linked paragraph (which the boilerplate would decorate as a button).
     const pressItems = Array.from(element.querySelectorAll('.press-homepage .margin-bottom-2, .view-content > .margin-bottom-2'))
       .filter((el) => !el.closest('.attachment-after, .attachment'));
-    const leftContent = fixImgs(pressItems.length ? pressItems : Array.from(element.querySelectorAll('.press-homepage > .view-content > *')));
+    const sourceItems = pressItems.length
+      ? pressItems
+      : Array.from(element.querySelectorAll('.press-homepage > .view-content > *'));
 
-    // Right: the events schedule table.
+    const leftContent = [];
+    sourceItems.forEach((item) => {
+      const titleLink = item.querySelector('h1 a, h2 a, h3 a, h4 a, a');
+      if (titleLink && (titleLink.textContent || '').trim()) {
+        // Emit the press-release title as a PLAIN-TEXT heading (no anchor).
+        // In the xwalk/JCR path, md2jcr's columns-block flattening unwraps a
+        // single-child heading that contains a link down to the bare link,
+        // which then renders as a pill "button" component. A plain-text heading
+        // converts cleanly to a "title" component and matches the source's
+        // heading hierarchy. (The press release remains reachable via the
+        // section's "View All Press Releases" link.)
+        const h = document.createElement('h3');
+        h.textContent = (titleLink.textContent || '').trim();
+        leftContent.push(h);
+      }
+      const time = item.querySelector('time');
+      if (time && time.textContent.trim()) {
+        const p = document.createElement('p');
+        p.textContent = time.textContent.replace(/\s+/g, ' ').trim();
+        leftContent.push(p);
+      }
+      const body = item.querySelector('.views-field-body .field-content, .field-content');
+      if (body && body.textContent.trim()) {
+        const p = document.createElement('p');
+        p.textContent = body.textContent.replace(/\s+/g, ' ').trim();
+        leftContent.push(p);
+      }
+    });
+
+    // Right: flatten the events schedule table to one paragraph per event
+    // (bold date range on top, event name below) — no nested <table>.
+    const rightContent = [];
     const eventsTable = element.querySelector('.events-homepage table, .attachment-after table, .attachment table, table');
-    const rightContent = fixImgs([eventsTable].filter(Boolean));
+    if (eventsTable) {
+      Array.from(eventsTable.querySelectorAll('tr')).forEach((tr) => {
+        const tds = Array.from(tr.querySelectorAll('td'));
+        if (!tds.length) return;
+        const dateText = (tds[0] ? tds[0].textContent : '').replace(/\s+/g, ' ').trim();
+        const nameText = (tds[1] ? tds[1].textContent : '').replace(/\s+/g, ' ').trim();
+        if (!dateText && !nameText) return;
+        const p = document.createElement('p');
+        if (dateText) {
+          const strong = document.createElement('strong');
+          strong.textContent = dateText;
+          p.append(strong);
+        }
+        if (dateText && nameText) p.append(document.createElement('br'));
+        if (nameText) p.append(document.createTextNode(nameText));
+        rightContent.push(p);
+      });
+    }
 
     if (!leftContent.length && !rightContent.length) {
       element.replaceWith(...element.childNodes);

@@ -71,63 +71,26 @@
       </section_2>
       <section_3 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
         <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Press &amp; Events" titleType="h2"/>
-        <columns sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="4" columns="8">
+        <columns sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
           <row1 jcr:primaryType="nt:unstructured">
             <col1 jcr:primaryType="nt:unstructured">
-              <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/investors/press-releases/nsn-cycling-team-announces-strategic-partnership-compex-elevate" linkText="NSN Cycling Team announces strategic partnership with Compex to elevate performance and recovery"/>
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;July 23, 2026&lt;/p&gt;&lt;p&gt;NSN Cycling Team is proud to announce a new partnership with Compex, a world leader in portable EMS muscle stimulators and recovery technology. Compex, part of the global medical technology
-                    company Enovis, has been helping athletes optimize performance and recovery for more than 40 years.&lt;/p&gt;"/>
-              <button_1 sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/investors/press-releases/enovis-companion-animal-health-launches-ct-revitl" linkText="Enovis™ Companion Animal Health Launches CT-RevitL™, the Next-Generation Laser Therapy System for Veterinary Care"/>
-              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;July 13, 2026&lt;/p&gt;&lt;p&gt;DALLAS, TX, July 13, 2026 - Enovis™ Corporation (NYSE: ENOV), an innovation-driven medical technology company, today announced the U.S. launch of CT-RevitL™, the next-generation veterinary PBM
-                    laser therapy system from its Companion Animal Health business. CT-RevitL delivers enhanced clinical performance, greater mobility and a more intuitive treatment experience for veterinary teams
-                    and their patients.&lt;/p&gt;"/>
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Enovis Announces Second Quarter 2026 Results" titleType="h3"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;August 6, 2026&lt;/p&gt;&lt;p&gt;Dallas, TX, August 6, 2026 (GLOBE NEWSWIRE)—Enovis™ Corporation (“Enovis” or “the Company”) (NYSE:
+                    ENOV), an innovation-driven medical technology growth company, today announced its financial results
+                    for the second quarter ended July 3, 2026. The Company will host an investor conference call and
+                    live webcast to discuss these results today at 8:30 am ET.&lt;/p&gt;"/>
+              <title_1 sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="NSN Cycling Team announces strategic partnership with Compex to elevate performance and recovery" titleType="h3"/>
+              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;July 23, 2026&lt;/p&gt;&lt;p&gt;NSN Cycling Team is proud to announce a new partnership with Compex, a world leader in portable EMS
+                    muscle stimulators and recovery technology. Compex, part of the global medical technology company
+                    Enovis, has been helping athletes optimize performance and recovery for more than 40 years.&lt;/p&gt;"/>
             </col1>
             <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"/>
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;&lt;strong&gt;Aug 28 - Aug 29&lt;/strong&gt;&lt;br&gt;
+                    Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sep 15 - Sep 19&lt;/strong&gt;&lt;br&gt;
+                    AOFAS 2026&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Sep 30 - Oct 1&lt;/strong&gt;&lt;br&gt;
+                    MD All-star Symposium&lt;/p&gt;"/>
             </col2>
-            <col3 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;"/>
-            </col3>
-            <col4 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;"/>
-            </col4>
-            <col5 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;"/>
-            </col5>
-            <col6 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;"/>
-            </col6>
-            <col7 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;"/>
-            </col7>
-            <col8 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;"/>
-            </col8>
           </row1>
-          <row2 jcr:primaryType="nt:unstructured">
-            <col1 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Aug 28 - Aug 29&lt;/p&gt;&lt;/div&gt;"/>
-            </col1>
-            <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Level Up: Redefining Advanced F&amp;#x26;A MIS&lt;/p&gt;&lt;/div&gt;"/>
-            </col2>
-          </row2>
-          <row3 jcr:primaryType="nt:unstructured">
-            <col1 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 15 - Sep 19&lt;/p&gt;&lt;/div&gt;"/>
-            </col1>
-            <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;AOFAS 2026&lt;/p&gt;&lt;/div&gt;"/>
-            </col2>
-          </row3>
-          <row4 jcr:primaryType="nt:unstructured">
-            <col1 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;Sep 30 - Oct 1&lt;/p&gt;&lt;/div&gt;"/>
-            </col1>
-            <col2 jcr:primaryType="nt:unstructured">
-              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;div&gt;&lt;p&gt;MD All-star Symposium&lt;/p&gt;&lt;/div&gt;"/>
-            </col2>
-          </row4>
         </columns>
         <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/news-events" linkText="View All Press Releases"/>
         <columns_1 sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="1" columns="2">
